@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:dataTable resizableColumns="false" tableStyle="width:auto"  var="eineAktie" value="#{verwaltung.getAktien()}">  
+                <p:column> 
+                    <f:facet name="header">Nummer</f:facet>
+                    <h:outputText value="#{eineAktie.getNr()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Name</f:facet>
+                    <h:outputText value="#{eineAktie.getName()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Code</f:facet>
+                    <h:outputText value="#{eineAktie.getCode()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Anzahl</f:facet>
+                    <h:outputText value="#{eineAktie.getAnzahl()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Buying Course</f:facet>
+                    <h:outputText value="#{eineAktie.getKaufkurs()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Einstandswert</f:facet>
+                    <h:outputText value="#{eineAktie.getEinstandswert()}"/>
+                </p:column>
+                 <p:column>
+                    <f:facet name="header">Current Kurs</f:facet>
+                    <h:outputText value="#{eineAktie.getCurrentKurs()}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Current Value</f:facet>
+                    <h:outputText value="#{eineAktie.getCurrentValue()}"/>
+                </p:column>
+                 <p:column>
+                    <f:facet name="header">Dividenden total</f:facet>
+                    <h:outputText value="#{eineAktie.divSummy()}"/>
+                </p:column>
+        </p:dataTable>
+             <h:commandLink value="Dividende für Aktie hinzufügen" action="#{werteController.addDividende()}"/>
+             <br/>
+             <h:commandLink value="Neue Aktie / Wert hinzufügen" action="#{werteController.addWert()}"/>
+             <br/>
+             <br/>
+             <h:outputText value="Before you add a dividend, you need to add a Wert/Aktie first"/>
+        </h:form>
+    </h:body>
+</html>
+

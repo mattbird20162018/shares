@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+          <h:panelGrid columns="2">
+          <h:outputText value="Aktien nummer"/>
+          <h:outputText value="#{werteController.getNeuerWert().nr}"/>
+          <h:outputText value="Aktien Name"/>
+          <h:inputText value="#{werteController.getNeuerWert().name}"/>
+          <h:outputText value="Code"/>
+          <h:inputText value="#{werteController.getNeuerWert().code}"/>
+          <h:outputText value="Anzahl"/>
+          <h:inputText value="#{werteController.getNeuerWert().anzahl}"/>
+          <h:outputText value="Kaufkurs"/>
+          <h:inputText value="#{werteController.getNeuerWert().kaufkurs}"/>
+          <h:outputText value="Einstandswert"/>
+          <h:inputText value="#{werteController.getNeuerWert().einstandswert}"/>
+          <h:outputText value="Aktueller Kurs"/>
+          <h:inputText value="#{werteController.getNeuerWert().currentKurs}"/>
+          <h:outputText value="Aktueller Wert"/>
+          <h:inputText value="#{werteController.getNeuerWert().currentValue}"/>
+          <h:commandLink value="Save Aktie/Wert" action="#{werteController.speichern()}"/>
+          <h:commandLink value= "Berechne Einstandskurs" action="#{werteController.getNeuerWert().createEinstandswert()}"/>
+          <h:commandLink value="Berechne Aktuellen Wert" action="#{werteController.getNeuerWert().createCurrentValue()}"/>
+          <h:commandLink value="go back" action="#{werteController.abbrechen()}"/>
+          </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

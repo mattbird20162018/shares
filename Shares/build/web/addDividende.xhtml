@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:head>
+		<title>Artikel bearbeiten</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<h:panelGrid columns="2" id="editTable" border="1" style="border-collapse: collapse">
+				<h:outputText value="Nummer" />
+                                <h:inputText value="#{werteController.getWerte().nr}" />
+                                <h:outputText value="Name" />
+                                <h:inputText value="#{werteController.getWerte().name}" />
+                                <h:outputText value="Eingeben der jährlichen Dividende"/>
+                                <h:inputText value="#{werteController.neueDividende.divid}"/>
+                                <h:commandLink value="Save Dividende" action="#{werteController.speichernDividende()}"/>
+                                <h:commandLink value="zurück" action="#{werteController.zurueck()}"/>
+                                <h:commandLink value="vor" action="#{werteController.vor()}"/>
+                                <h:commandLink value="go back" action="#{werteController.abbrechen()}"/>
+                        </h:panelGrid>
+		</h:form>
+	</h:body>
+</html>
